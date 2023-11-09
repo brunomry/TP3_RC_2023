@@ -1,4 +1,3 @@
-
 let elementoMain = document.getElementById("main");
 let elementoSection = `<section class="container">
                           <h2 class="pb-3 text-center text-primary">Resolución de Ejercicio N°1 - TP3</h2>
@@ -40,3 +39,4 @@ elementoSection += `</ul></article>`;
 
 elementoSection += `</row></div></section>`;
 elementoMain.innerHTML = elementoSection;
+
