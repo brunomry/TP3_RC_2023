@@ -1,6 +1,6 @@
 let elementoMain = document.getElementById("main");
 let elementoSection = `<section class="container">
-                        <h1 class="pb-3 text-center text-primary">Resolución de Ejercicio Auxliar N°4</h1>
+                        <h1 class="pb-3 text-center text-primary">Resolución de Ejercicio Auxiliar N°4</h1>
                         <div class="row">`;
 
 //Solución N°1 usando función declarada

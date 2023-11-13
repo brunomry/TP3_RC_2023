@@ -37,6 +37,6 @@ elementoSection += `<ul>`;
 meses.map(mes => elementoSection += `<li>${mes}</li>`);
 elementoSection += `</ul></article>`;
 
-elementoSection += `</row></div></section>`;
+elementoSection += `</div></section>`;
 elementoMain.innerHTML = elementoSection;
 

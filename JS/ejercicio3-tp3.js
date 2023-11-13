@@ -27,7 +27,7 @@ for (let i = 0; i < 50; i++) {
 let cadenaSumas = sumas.join(' - ');
 
 elementoSection += `<article class="col-md-12">
-                      <h4 class="mb-3">Simulamiento de 50 lanzamientos de 2 dados</h4>
+                      <h4 class="mb-3">Simulación de 50 lanzamientos de 2 dados</h4>
                       <p>Resultados de la suma de valores de los dados en cada lanzamiento:</p>
                       <p>${cadenaSumas}</p>
                     </article>`;
