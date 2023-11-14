@@ -3,7 +3,8 @@ let elementoSection = `<section class="container">
                           <h2 class="pb-3 text-center text-primary">Resolución de Ejercicio N°1 - TP3</h2>
                           <div class="row">`;
 
-let meses = [];
+let meses1 = [];
+let meses2 = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto", "septiembre","octubre","noviembre","diciembre"];
 
 //Solucion N°1
 elementoSection += `<article class="col-md-6">
@@ -12,19 +13,33 @@ elementoSection += `<article class="col-md-6">
 
 elementoSection += `<ul>`
 let mes = "";
+let cancelar = false;
 //este for aplica para ambas soluciones
 for (let i = 0; i < 12; i++) {
   do{
     mes = prompt(`Listado de los 12 meses del año \n Ingrese el mes ${i+1}:`);
-    if(mes === null) alert(`La operación fue cancelada`);
-  }while(mes === "");
+    if(mes === null){
+      cancelar = true;
+      break;
+    } 
+    if(mes === "" || !isNaN(mes) || !meses2.includes(mes.toLowerCase())){
+      alert('No se ingresó el mes o el valor ingresado no es válido');
+    }
+  }while(mes === "" || !isNaN(mes) || !meses2.includes(mes.toLowerCase()));
+  if(cancelar) break;
+
   mes = mes.charAt(0).toUpperCase() + mes.slice(1);
-  meses.push(mes);
+  meses1.push(mes);
 }
 
-for (let i = 0; i < meses.length; i++) {
-  elementoSection += `<li>${meses[i]}</li>`
+if(meses1.length == meses2.length){
+  for (let i = 0; i < meses1.length; i++) {
+    elementoSection += `<li>${meses1[i]}</li>`
+  }
+}else{
+  elementoSection += `<p>Se canceló la operación</p>`
 }
+
 elementoSection += `</ul></article>`;
 
 
@@ -34,7 +49,15 @@ elementoSection += `<article class="col-md-6">
                       <h4>Lista de meses</h4>`;
 
 elementoSection += `<ul>`;
-meses.map(mes => elementoSection += `<li>${mes}</li>`);
+
+if(meses1.length == meses2.length){
+  for (let i = 0; i < meses1.length; i++) {
+    meses1.map(mes => elementoSection += `<li>${mes}</li>`);
+  }
+}else{
+  elementoSection += `<p>Se canceló la operación</p>`
+}
+
 elementoSection += `</ul></article>`;
 
 elementoSection += `</div></section>`;
